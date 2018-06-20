@@ -1,0 +1,17 @@
+def quicksort(tosort,l,r):
+    if l < r:
+        print(l,r);
+        v = partition(tosort,l,r);
+        quicksort(tosort,l,v-1);
+        quicksort(tosort,v+1,r);
+    return;
+def partition(tosort,l,r):
+    x=tosort[r];
+    i=-1;
+    for num in range(l,r):
+        print(num);
+        if tosort[num] <= x:
+            i=i+1;
+            tosort[num],tosort[i] = tosort[i],tosort[num];
+    tosort[r], tosort[i+1] = tosort[i+1], tosort[r]
+    return i+1
